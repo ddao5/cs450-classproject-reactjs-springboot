@@ -2,9 +2,6 @@ package com.cs450.project.model;
 
 import java.time.LocalDate;
 import java.util.List;
-
-import com.cs450.project.model.Dependent;
-
 public class Employee {
     private String firstName;
     private String mInit;

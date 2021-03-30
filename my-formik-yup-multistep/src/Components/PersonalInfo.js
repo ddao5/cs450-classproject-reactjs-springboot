@@ -3,6 +3,11 @@ import MyDatePicker from "./CustomUI/MyDatePicker";
 import SsnTextField from "./CustomUI/SsnTextField";
 import MyTextField from "./CustomUI/MyTextField";
 import MySelectField from "./CustomUI/MySelectField";
+
+/**
+ * This is used to request user to fill out information (attributes) regarding the new employee, such as
+ * first name, initial, last name, etc.
+ */
 const PersonalInfo = (props) => {
   return (
     <>

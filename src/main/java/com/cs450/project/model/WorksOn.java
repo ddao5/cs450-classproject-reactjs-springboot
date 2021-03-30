@@ -1,5 +1,8 @@
 package com.cs450.project.model;
 
+/**
+ * A JAVA object used to represent Works_on table.
+ */
 public class WorksOn {
     private String pNumber;
     private double hours;

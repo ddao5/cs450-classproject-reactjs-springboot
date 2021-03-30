@@ -2,6 +2,9 @@ package com.cs450.project.model;
 
 import java.time.LocalDate;
 
+/**
+ * An object used to represent Dependent table.
+ */
 public class Dependent {
     private String dependentName;
     private char sex;

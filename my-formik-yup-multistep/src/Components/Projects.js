@@ -3,6 +3,10 @@ import { Box, IconButton, FormHelperText } from "@material-ui/core";
 import { Add, Delete } from "@material-ui/icons/";
 import MyTextField from "./CustomUI/MyTextField";
 import MySelectField from "./CustomUI/MySelectField";
+
+/**
+ * This component is used to ask user to enter project number and number of hours a new employee will spend on that project.
+ */
 const Projects = () => {
   const [field, meta] = useField({ name: "projects" });
   const addHandler = (arrayHelpers) => {

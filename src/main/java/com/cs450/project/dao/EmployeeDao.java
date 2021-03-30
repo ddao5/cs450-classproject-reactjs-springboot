@@ -1,7 +1,6 @@
 package com.cs450.project.dao;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.jdbc.core.RowMapper;
 
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+
 @Component
 @Repository
 @Qualifier("employeeDao")
@@ -48,20 +48,10 @@ public class EmployeeDao implements EmployeeDaoInterface {
     }
 
     @Override
-    public void update(Employee employee, String ssn) {
-
-    }
-
-    @Override
-    public void delete(String ssn) {
-
-    }
-
-    @Override
     public Employee find(String ssn) {
         String sql = "SELECT * FROM employee WHERE ssn = ?";
         List<Employee> list = jdbcTemplate.query(sql, rowMapper, ssn);
-        if(list.size() == 0) {
+        if (list.size() == 0) {
             return null;
         }
         return list.get(0);
@@ -75,8 +65,8 @@ public class EmployeeDao implements EmployeeDaoInterface {
     @Override
     public Employee getDeptManager(String ssn) {
         String sql = "SELECT e.* FROM employee e, department d WHERE e.dno = d.dnumber AND e.ssn = d.mgrssn AND e.ssn = ?";
-        List<Employee> deptManager = jdbcTemplate.query(sql,rowMapper, ssn);
-        if(deptManager.size() == 0) {
+        List<Employee> deptManager = jdbcTemplate.query(sql, rowMapper, ssn);
+        if (deptManager.size() == 0) {
             return null;
         }
         return deptManager.get(0);

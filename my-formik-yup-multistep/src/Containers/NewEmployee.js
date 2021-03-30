@@ -14,6 +14,9 @@ import {
 } from "../validation/validationSchemas";
 import classes from "./NewEmployee.module.css";
 import axios from "axios";
+/**
+ * A wrapper to Formik.
+ */
 const NewEmployee = (props) => {
   const [hasDependent, setHasDependent] = useState(false);
   //this only get called we remove the last dependent or when we first add a dependent (ANSWER: YES)

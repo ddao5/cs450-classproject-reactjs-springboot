@@ -30,6 +30,9 @@ export const stageTwoValidation = yup.object({
   address: yup.string().required("Required"),
   email: yup.string().email().max(255, "Must be 255 characters or less").required("Required"),
 });
+// Stage three validation is a bit comlicated because we need to make sure that
+// each entry has a unique project number and its hours do not exceed 40.
+// In addition to that, we need to make sure the total hours do exceed 40 as well.  
 export const stageThreeValidation = yup.object({
   projects: yup
     .array()
@@ -64,6 +67,10 @@ export const stageThreeValidation = yup.object({
     }),
 });
 
+
+//Stage four validation used to make sure that a dependent's name is unique as well, because
+// in the database, the new employee's ssn and dependent are used as primary key in DEPENDENT table,
+// which requires the dependent's name must be unique.
 export const stageFourValidation = yup.object({
   dependents: yup.array().of(
     yup.object({

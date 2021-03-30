@@ -33,6 +33,8 @@ const FormikStepper = ({ children, ...props }) => {
   const redirectButton = () => {
     props.history.push("/employees");
   };
+  // a dialog to let user know that the employee has been added to the dabase. If user clicks OK,
+  // the application will redirect to "employess" page showing all employees in the database.
   const dialog = (
     <Box
       display="flex"
@@ -63,8 +65,10 @@ const FormikStepper = ({ children, ...props }) => {
       //set complete is true for the last step
       setCompleted(true);
     } else {
+      //backend validation our form data in the current step.
       hasErr = await backendValidation(values, helpers, step);
       helpers.setSubmitting(false);
+      //if there is an error, stay at current step.
       if (hasErr) {
         next = 0;
       }

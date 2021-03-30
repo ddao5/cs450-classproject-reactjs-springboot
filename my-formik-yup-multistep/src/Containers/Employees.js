@@ -3,6 +3,9 @@ import { DataGrid } from "@material-ui/data-grid";
 import { Component } from "react";
 import axios from "axios";
 
+/**
+ * A simple component used to provide all information of employees in the database.
+ */
 class Employees extends Component {
   state = {
     rows: [],
