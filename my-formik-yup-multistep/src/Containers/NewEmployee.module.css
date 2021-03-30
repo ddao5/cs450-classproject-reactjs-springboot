@@ -1,0 +1,6 @@
+.NewEmployee {
+  max-height: 700px;
+  /* display: flex;
+  justify-content: center; */
+  overflow-y: auto ;
+}
