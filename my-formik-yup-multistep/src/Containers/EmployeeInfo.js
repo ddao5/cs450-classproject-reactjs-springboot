@@ -24,18 +24,15 @@ class EmployeeInfo extends Component {
     const resProjects = await axios.get(
       `http://localhost:8080/api/v1/employee/${this.props.match.params.id}/projects`
     );
-
     const dependents = [];
     const projects = [];
 
-    for (let i = 0; i < resDependents.data; i++) {
+    for (let i = 0; i < resDependents.data.length; i++) {
       dependents.push({ id: i + 1, ...resDependents.data[i] });
     }
     for (let i = 0; i < resProjects.data.length; i++) {
       projects.push({ id: i + 1, ...resProjects.data[i] });
     }
-    console.log(projects);
-    console.log(dependents);
     this.setState({
       dependents: dependents,
       projects: projects,

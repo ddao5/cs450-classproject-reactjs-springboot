@@ -41,7 +41,6 @@ class Employees extends Component {
         superSsn,
       });
     }
-    console.log(rows);
     this.setState({ rows: rows });
   }
   render() {
