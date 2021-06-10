@@ -1,4 +1,4 @@
-# cs450-classproject-reactjs-springboot
+# employee-system-reactjs-springboot
 
 ##Requirements:
 
